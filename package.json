@@ -1,0 +1,6 @@
+{
+  "name": "readout_web",
+  "dependencies": {
+    "node-fetch": "^2.6"
+  }
+}

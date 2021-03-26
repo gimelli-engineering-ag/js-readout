@@ -1,17 +1,26 @@
-child_pids=()
+#!/usr/bin/env bash
+set -u
 
-for r in {0..3}; do
-    ROBOT=$r node rw.js > out_$r.json &
+if [[ $# -ne 1 ]]; then
+    echo "usage: ./record_all.sh NUMBER_OF_ROBOTS" >&2
+    exit 2
+fi
+
+NR_ROBOTS="$1"
+
+child_pids=()
+for (( r = 0; r < "$NR_ROBOTS"; r++ )); do
+    ROBOT=$r node rw.js > recordings/out_$r.json &
     child_pids+=($!)
 done
-
-# echo ${child_pids[@]}
 
 sleep 0.5
 
 echo ""
-echo "press enter to stop recording"
+echo "Saving output to the directory `recordings`."
+echo ""
+echo "Press enter to stop recording."
 read
 
-echo "killing processes"
+echo "Stopping recorder processes..."
 kill ${child_pids[@]}
