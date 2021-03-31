@@ -1,6 +1,6 @@
 # Readout via Desk API
 
-*Important: This was just a quick solution that we hacked together to record the robot positions for a single test that we performed. No guarantee about the correctness of the recorded information is made. Use at your own risk. The code is provided publicly here in case it might be useful to someone else.*
+*Important: This was just a quick solution that we hacked together to record the robot positions for a single test that we performed. No guarantee about the correctness of the recorded information is made. Use at your own risk. The code is provided publicly here in case it might be useful to someone else. Note also that the code is not guaranteed to work on future Panda firmware versions.*
 
 This project lets you continuously record the position of one or more [Franka Emika](https://www.franka.de/) Panda robots into a machine-readable JSON format, along with the current unix timestamp.
 
